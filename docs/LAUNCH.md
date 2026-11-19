@@ -21,7 +21,7 @@ Terms and Privacy are live (`draft: false`), filled from the app's own code: Str
 
 Still worth a lawyer's pass, since the code can't settle them:
 
-- **Company and law.** The pages name KeyFly at 8 The Green, STE R, Dover, Delaware 19901, US, and choose Delaware law and courts (inferred from the Delaware address). Confirm the exact legal entity name (e.g. "KeyFly Inc.") and that Delaware law is wanted.
+- **Company and law.** The pages name KeyFly at 8 The Green, STE R, Dover, Delaware 19901, US, and choose Delaware law and courts (inferred from the Delaware address). The name is plain "KeyFly", no "Inc." (decided 2026-11-19). Confirm Delaware law is wanted.
 - **EU/UK representative (GDPR Art. 27).** A non-EU company offering KeyFly to people in the EU or UK normally needs one. Not named yet.
 - **App analytics consent.** The app's usage data is on by default (off with Do Not Track / Global Privacy Control, and switchable in Settings). In the EU, analytics stored on the device usually needs opt-in consent. Consider off-by-default for EU visitors.
 - **Account deletion** is by email to help@keyfly.si; there's no in-app button yet.
