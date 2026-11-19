@@ -43,6 +43,7 @@ export const topics = [
   { id: "guides", label: "Guides", line: "How KeyFly works, part by part." },
   { id: "workflows", label: "Workflows", line: "KeyFly with the tools you already use." },
   { id: "product", label: "Product", line: "Features, explained." },
+  { id: "compare", label: "Comparisons", line: "KeyFly next to other AI video editors, from public facts." },
 ];
 
 const posts = [
@@ -407,6 +408,119 @@ const posts = [
         blocks: [
           "Exports are encoded on your device. Nothing is uploaded, and exporting uses no AI minutes.",
           "Export size and the small KeyFly mark depend on your plan: the Free plan exports in 1080p with the mark, and paid plans go up to 4K without it. [See the plans](/pricing#compare).",
+        ],
+      },
+    ],
+  },
+  {
+    // Cardboard's side: only its public pages, help centre and privacy policy,
+    // read on 2026-11-19 (cardboard.ai, /desktop, /pricing, /mcp, /changelog,
+    // /privacy, learn.usecardboard.com). Re-check before changing this post;
+    // their pricing changes often.
+    slug: "keyfly-vs-cardboard",
+    topic: "compare",
+    date: { iso: "2026-11-19", text: "19 November 2026" },
+    title: "KeyFly vs Cardboard: which AI video editor fits how you work",
+    seoTitle: "KeyFly vs Cardboard: AI video editor comparison",
+    dek: "Both turn a sentence or your footage into an editable first cut. Here's where they differ: Windows, your own AI agent, handing off to Premiere or Avid, brand kits, teams and your data.",
+    cover: { video: "/video/edit-after.mp4", poster: "/video/edit-after.webp", alt: "A crowd in front of a lit concert stage" },
+    sections: [
+      {
+        id: "short",
+        title: "The short answer",
+        blocks: [
+          "[Cardboard](https://www.cardboard.ai) and KeyFly are both AI video editors driven by a conversation: describe the video or drop in footage, get a first cut, then change it in words or on a timeline. If you already use Cardboard, most of how you work carries straight over.",
+          "Where they differ is everything around that first cut. KeyFly is built to fit the way you already work:",
+          {
+            list: [
+              "**Windows and Intel Macs.** KeyFly has desktop apps for Windows 10 and 11 and for Macs with Apple silicon or Intel. Cardboard's desktop app is for Apple silicon Macs; its Windows app is listed as in development.",
+              "**Your own AI agent, in any editor you code in.** Connect Claude Code, Codex, Cursor or any ACP agent, and it edits your timeline on your own plan, without AI minutes.",
+              "**Finish anywhere.** Timelines go out as FCPXML, EDL or OpenTimelineIO, packaged with every file they use, from the desktop or the web. That includes Avid.",
+              "**On brand from the first cut.** A brand kit filled from your website, and 91 templates to start from.",
+              "**Teams without a sales call.** A self-serve Team plan, priced per seat.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "table",
+        title: "Side by side",
+        blocks: [
+          "Cardboard's column comes from its public website, help centre and privacy policy as they stood on 19 November 2026. Products change; check their site for the latest.",
+          {
+            table: {
+              head: ["", "KeyFly", "Cardboard"],
+              rows: [
+                ["Desktop apps", "Mac (Apple silicon and Intel, macOS 13+) and Windows 10 and 11", "Mac with Apple silicon; Windows app in development"],
+                ["Web app", "Yes", "Yes, in Chrome"],
+                ["Inside ChatGPT and Claude", "Yes", "Yes"],
+                ["Your own AI agent", "Claude Code, Codex, Cursor or any ACP agent, without AI minutes", "A Claude or ChatGPT/Codex subscription, in the Mac app"],
+                ["Timeline to other editors", "FCPXML, EDL and OpenTimelineIO, packaged with media, from desktop or web", "FCPXML and Premiere XML, from the web editor, on Starter and up"],
+                ["Opens in", "Final Cut Pro, DaVinci Resolve, Premiere Pro and Avid", "Final Cut Pro, DaVinci Resolve and Premiere Pro"],
+                ["Brand kit", "Logo, colours, font, tone and voice, filled from your website", "Not mentioned in its docs"],
+                ["Starting points", "91 templates in 16:9, 9:16, 1:1 and 4:5", "Recipes: finished edits to remix with your footage"],
+                ["Talking heads", "Silences and filler words cut, captions, zooms and callouts", "Filler words, dead air and retakes removed, captions"],
+                ["Voice-over", "AI voice or your own cloned voice", "AI voice-over from Starter, voice cloning from Creator"],
+                ["Free to start", "Free plan that never expires, plus a 7-day Creator trial with no card", "Lite, free in the Mac app with one-time credits and 3 exports"],
+                ["Teams", "Self-serve Team plan, per seat", "Through sales"],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        id: "platforms",
+        title: "Windows, Intel Macs and the browser",
+        blocks: [
+          "If your team is on Windows, or you edit on an Intel Mac, this is the deciding row. Cardboard asks Windows and Intel Mac users to work in the browser for now. KeyFly runs natively on both, and in the browser at [app.keyfly.si](https://app.keyfly.si) when you're away from your own machine.",
+        ],
+      },
+      {
+        id: "agents",
+        title: "Bring the AI you already pay for",
+        blocks: [
+          "Both let you use an AI subscription you already have. KeyFly goes wider: Claude Code, Codex, Cursor, Antigravity or any agent that speaks ACP, so a developer can edit video from the same tools they write code in. While your own agent works, KeyFly's AI minutes don't count down.",
+          "Read how it works in [Edit video with your own AI agent](/blog/edit-video-with-claude-code-codex-cursor).",
+        ],
+      },
+      {
+        id: "handoff",
+        title: "Handing off to Premiere, Resolve, Final Cut or Avid",
+        blocks: [
+          "Cardboard's help centre says timeline export works from its web editor, on Starter and above, as FCPXML or Premiere XML at 30 fps. KeyFly writes FCPXML, EDL and OpenTimelineIO, and **Package for editing** puts the timeline in a .zip with every file it uses, so it opens with its media in Final Cut Pro, DaVinci Resolve, Premiere Pro or Avid.",
+          "The details are in [Hand off a KeyFly cut](/blog/export-timeline-to-final-cut-resolve-premiere-avid). Which plans include timeline export is on the [plan comparison](/pricing#compare).",
+        ],
+      },
+      {
+        id: "pricing",
+        title: "Pricing",
+        blocks: [
+          "On 19 November 2026, [Cardboard's pricing page](https://www.cardboard.ai/pricing) listed four plans (Lite, Starter, Creator and Pro) from $10 to $250 a month, with lower prices when billed yearly and first-month offers. Lite is free in its Mac app with one-time credits and three exports; there's no free web plan. Team plans go through sales.",
+          "KeyFly starts with a Free plan that never expires, and every new account gets a 7-day Creator trial with no card. Paid plans include a BYO plan for people who bring their own AI agent, and a self-serve Team plan. AI minutes count only the AI's actual work, and each action shows its cost before it runs ([what an AI minute is](/blog/what-is-an-ai-minute)). Current prices are always on the [pricing page](/pricing).",
+        ],
+      },
+      {
+        id: "data",
+        title: "Your footage and your data",
+        blocks: [
+          "Cardboard's privacy policy allows it to use information, including your content, to train, test and improve its technology, and its Mac app shares data to improve Cardboard unless you switch that off.",
+          "KeyFly doesn't use your content to train AI models. Each AI step sends a provider only what that step needs, to return the result. In the desktop app, footage stays on your computer unless an AI step needs it, and exports are made on your device. Usage data never includes your videos, prompts or files, and you can switch it off in Settings. The details are in the [Privacy Policy](/privacy).",
+        ],
+      },
+      {
+        id: "switch",
+        title: "Moving from Cardboard to KeyFly",
+        blocks: [
+          {
+            steps: [
+              ["Keep your finished videos", "Export anything you want to keep from Cardboard first."],
+              ["Start free", "[Sign up](https://app.keyfly.si/signup?plan=free) on the web, or download KeyFly for Mac or Windows. No card needed."],
+              ["Fill your brand kit", "Paste your website's address and press `Analyze with AI`. See [Fill a brand kit from your website](/blog/brand-kit-from-your-website)."],
+              ["Make the first video", "Describe it in a sentence, pick a template, or drop in your footage."],
+              ["Connect your agent (optional)", "Point Claude Code, Codex or Cursor at KeyFly to edit on your own plan."],
+            ],
+          },
+          "Cardboard is a trademark of its owner. This page compares public information and isn't endorsed by Cardboard. Spot something out of date? Write to [help@keyfly.si](mailto:help@keyfly.si) and we'll fix it.",
         ],
       },
     ],

@@ -16,12 +16,18 @@ Last updated: 2026-11-19
 2. **GitHub secrets** on this repo: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
 3. **Take over the apex.** `keyfly.si` serves a one-page placeholder today. Remove whatever serves it (Pages project, Worker route or DNS record), then run the workflow by hand. The `custom_domain` route in `wrangler.jsonc` creates the DNS record and certificate. `www.keyfly.si` already 301s to the apex; keep that rule.
 4. **Search engines,** once live: verify the domain in Google Search Console and Bing Webmaster Tools (DNS TXT record, so nothing goes in the code), submit `https://keyfly.si/sitemap.xml`, and request indexing for `/`, `/product`, `/use-cases`, `/integrations`, `/pricing`.
-5. **Smoke test:** `/`, `/pricing` (real prices), `/llms.txt`, `/robots.txt`, `/sitemap.xml`, a missing page (404), and a share preview of the homepage (opengraph.xyz or similar).
+5. **Smoke test:** `/`, `/pricing` (real prices), `/terms`, `/privacy`, `/blog/keyfly-vs-cardboard`, `/llms.txt`, `/robots.txt`, `/sitemap.xml`, a missing page (404), and a share preview of the homepage (opengraph.xyz or similar).
 
-## Launch blockers (team decisions, not code)
+## Legal pages (published 2026-11-19)
 
-- **Terms and Privacy are drafts.** 22 and 25 amber `{{…}}` marks in `src/content/legal.js` (company address, jurisdiction, payment and hosting providers, refunds, retention, minimum age, liability cap…). The app's sign-in links to both pages, so they must be resolved and approved, then set `draft: false`. Until then they show "Draft for review" and stay `noindex`.
-- **Support address.** The app says support@keyfly.si for account deletion, the site says help@keyfly.si. Pick one.
+Terms and Privacy are live (`draft: false`), filled from the app's own code: Stripe billing and failed-payment flow, minute rollover and packs, seats, refunds, AI providers, AWS hosting, encryption, retention, telemetry. help@keyfly.si is the one support address, on the site and in the app.
+
+Still worth a lawyer's pass, since the code can't settle them:
+
+- **Company address and place of incorporation** aren't anywhere in the code, so the pages name Cevrynt Inc. without an address, and governing law is "where Cevrynt Inc. is incorporated" (the desktop licence's wording). Add both when known.
+- **EU/UK representative (GDPR Art. 27).** A non-EU company offering KeyFly to people in the EU or UK normally needs one. Not named yet.
+- **App analytics consent.** The app's usage data is on by default (off with Do Not Track / Global Privacy Control, and switchable in Settings). In the EU, analytics stored on the device usually needs opt-in consent. Consider off-by-default for EU visitors.
+- **Account deletion** is by email to help@keyfly.si; there's no in-app button yet.
 
 ## SEO and GEO: where the site stands
 
@@ -44,7 +50,7 @@ The site ranks only for what it has pages for: today that's five product pages a
 
 1. **Feature pages** (one search intent each, ~600–900 words, a demo clip, an FAQ): AI caption generator; remove filler words and silences; text to video / prompt to video; AI voice-over; resize video for TikTok, Reels and Shorts; export to Final Cut / Resolve / Premiere (FCPXML, EDL, OTIO). All built from facts the Product page already states.
 2. **Platform pages:** "AI video editor for Windows" and "for Mac". Few AI editors ship a real Windows app, so this is winnable early.
-3. **Comparison pages:** KeyFly vs Descript, CapCut, VEED, Kapwing, Runway, and "best Descript alternatives". Highest buying intent. Competitor facts only from their public pages, dated and linked (clean-room rule).
+3. **Comparison pages:** KeyFly vs Cardboard is live at `/blog/keyfly-vs-cardboard` (facts dated 19 Nov 2026; re-check Cardboard's pricing monthly, it changes often). Next: Descript, CapCut, VEED, Kapwing, Runway, and "best Cardboard alternatives". Highest buying intent. Competitor facts only from their public pages, dated and linked (clean-room rule).
 4. **Use-case category pages** (`/use-cases/social-ads`, …): one per category with real copy (who it's for, what the templates make, an example prompt, FAQ). Not one page per template: a template is only a name, shape and length today, which would be thin content.
 5. **Blog cadence:** two guides a month on how-to queries ("how to add captions to a video", "how to turn a podcast into clips", "how to edit video with Claude Code"). Each links to its feature page.
 

@@ -41,6 +41,7 @@ export const footer = {
         signIn,
         ...download.platforms.map((p) => ({ label: `KeyFly for ${p.label}`, href: p.href || "/#download" })),
         { label: "Blog", href: "/blog" },
+        { label: "KeyFly vs Cardboard", href: "/blog/keyfly-vs-cardboard" },
         { label: "Help", href: "mailto:help@keyfly.si" },
       ],
     },
