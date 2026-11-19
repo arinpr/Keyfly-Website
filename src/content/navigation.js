@@ -27,7 +27,7 @@ export const primaryCta = { label: "Start free", href: `${siteConfig.appUrl}/sig
 
 // The header's Download button names the visitor's system (the real builds
 // at app.keyfly.si/download, 2026-11-03). Other systems, and the server's
-// HTML, get the Download section; phones get the web app.
+// HTML, get the Download section; phones too (KeyFly needs a computer for now).
 // A Mac gets the Apple silicon build, or the Intel build where the browser
 // can tell it's an Intel Mac (Chrome and Edge can; Safari can't). After a
 // click, a small note says the download is starting, what to do with the
@@ -50,5 +50,5 @@ export const download = {
     close: "Close",
   },
   other: { label: "Download", href: "/#download" },
-  phone: { label: "Open in browser", href: siteConfig.appUrl },
+  phone: { label: "Download", href: "/#download" },
 };

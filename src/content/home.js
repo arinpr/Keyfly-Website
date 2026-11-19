@@ -595,7 +595,7 @@ export const download = {
   detected: "Your system",
   soon: "Coming soon",
   browser: { label: "Open in your browser", href: siteConfig.appUrl },
-  phone: "On a phone? KeyFly runs in the browser.",
+  phone: "On a phone? KeyFly runs on your Mac or Windows computer. Open keyfly.si there to download it.",
   note: "© KeyFly · keyfly.si",
   // Links and requirements from app.keyfly.si/download (2026-11-03). The
   // links always serve the latest build. The app isn't notarised yet, so the
@@ -638,7 +638,7 @@ export const faq = {
     },
     {
       q: "Does it run on Mac, Windows and the web?",
-      a: "Yes. KeyFly is a desktop app for macOS and Windows, and it also runs in your browser at app.keyfly.si.",
+      a: "Yes. KeyFly is a desktop app for macOS and Windows, and it also runs in your computer's browser at app.keyfly.si. Phones aren't supported yet.",
       link: { label: "Download", href: "#download" },
     },
     {

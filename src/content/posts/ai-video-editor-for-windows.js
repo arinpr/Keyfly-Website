@@ -111,7 +111,7 @@ const post = {
           },
         },
         "Not sure whether your Windows is 64-bit? Open Settings, go to System, then About, and look at \"System type\". Almost every PC sold in the last decade runs 64-bit Windows, but it's worth checking on an older machine before you download.",
-        "On a phone or a Chromebook? There's no desktop app for those, but KeyFly runs in the browser, so you can still open and edit projects there.",
+        "On a Chromebook? There's no desktop app for it, but KeyFly runs in a computer's browser at app.keyfly.si, so you can still open and edit projects there. Phones aren't supported yet: editing needs a computer.",
         "Once you know your PC qualifies, setup takes three steps: download the Windows installer, run it, and sign in. There's nothing to configure before your first video.",
         {
           steps: [
@@ -344,7 +344,7 @@ const post = {
       title: "What if you're away from your Windows PC?",
       blocks: [
         "Open KeyFly in any browser at app.keyfly.si, with the same account and the same projects.",
-        "The web app is for the times you're not at your desk: on a borrowed laptop, a work machine where you can't install software, or a phone between meetings. You can make and edit videos there, and timeline export and `Package for editing` work from the web as well as the desktop.",
+        "The web app is for the times you're not at your desk: on a borrowed laptop, a work machine where you can't install software, or a shared office computer. You can make and edit videos there, and timeline export and `Package for editing` work from the web as well as the desktop.",
         "Some things are desktop-only by nature. Your own agent (Claude Code, Codex, Cursor and the rest) connects through the desktop app, because it runs on your computer. And footage that lives on your PC's drives is easiest to work with from the PC itself.",
         "You can also start in ChatGPT or Claude, where KeyFly is available as an app, and continue in KeyFly when you want the full editor.",
         "For teams, a review link lets a client or colleague comment and approve without installing anything; their comments show up in the project's Feedback. A self-serve Team plan is priced per seat.",
@@ -352,7 +352,7 @@ const post = {
           image: {
             src: "/video/call-hook-3.webp",
             alt: "A woman scrolling a phone on a sofa",
-            caption: "Away from the PC, KeyFly runs in the browser, phones included. Illustrative stock footage.",
+            caption: "Away from your own PC, KeyFly runs in a browser on any other computer. Illustrative stock footage.",
             w: 960,
             h: 540,
           },
