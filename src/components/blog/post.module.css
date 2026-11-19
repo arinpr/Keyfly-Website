@@ -387,7 +387,11 @@
   color: var(--paper);
   font-family: var(--font-mono-stack);
   font-size: 0.85em;
-  white-space: nowrap;
+  /* Short app labels stay on one line naturally; long prompts must wrap,
+     or they push the page sideways on every screen size. */
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .bullets {
