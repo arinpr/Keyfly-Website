@@ -41,12 +41,23 @@ export default function sitemap() {
     .filter((p) => !p.draft)
     .map((p) => ({ path: p.path, updated: p.updated.iso }));
 
-  // The blog: each post, with the date it was last changed.
-  const postPages = allPosts.map((p) => ({ path: p.path, updated: (p.updated ?? p.date).iso }));
+  // The blog: each post, with the date it was last changed, and its pictures
+  // (the cover still, figures and template stills) for Google Images.
+  const postImages = (post) => [
+    ...new Set(
+      [
+        post.cover.poster,
+        ...post.sections.flatMap((s) =>
+          s.blocks.flatMap((b) => (b.image ? [b.image.src] : b.gallery ? b.gallery.items.map((i) => i.src) : [])),
+        ),
+      ].map((src) => `${siteConfig.url}${src}`),
+    ),
+  ];
+  const postPages = allPosts.map((p) => ({ path: p.path, updated: (p.updated ?? p.date).iso, images: postImages(p) }));
 
-  return [...publicPages, ...legalPages, ...postPages].map(({ path, updated }) => ({
+  return [...publicPages, ...legalPages, ...postPages].map(({ path, updated, images: own }) => ({
     url: absolute(path),
     lastModified: updated,
-    ...(images[path] ? { images: images[path] } : {}),
+    ...((own ?? images[path]) ? { images: own ?? images[path] } : {}),
   }));
 }

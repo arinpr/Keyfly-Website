@@ -29,10 +29,10 @@ export const publicRobots = siteConfig.indexable
 // lastmod only while it stays accurate, so change the date only when the
 // page really changes, and add a page here when it goes public.
 export const publicPages = [
-  { path: "/", updated: "2026-11-09" },
+  { path: "/", updated: "2026-11-19" },
   { path: "/product", updated: "2026-11-09" },
-  { path: "/use-cases", updated: "2026-11-09" },
-  { path: "/integrations", updated: "2026-11-09" },
+  { path: "/use-cases", updated: "2026-11-19" },
+  { path: "/integrations", updated: "2026-11-19" },
   { path: "/pricing", updated: "2026-11-09" },
-  { path: "/blog", updated: "2026-11-09" },
+  { path: "/blog", updated: "2026-11-19" },
 ];

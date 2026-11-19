@@ -380,6 +380,7 @@ export const integrationsFaq = {
       topic: "agents",
       q: "Do my own agents use AI minutes?",
       a: "No. They edit with your own plan, without using your AI minutes. Only KeyFly Cloud uses AI minutes.",
+      link: { label: "What an AI minute is", href: "/blog/what-is-an-ai-minute" },
     },
     {
       topic: "agents",
@@ -391,6 +392,7 @@ export const integrationsFaq = {
       topic: "agents",
       q: "What happens when my agent reaches its limit?",
       a: "KeyFly tells you when it resets and offers another agent that still has capacity, or KeyFly Cloud if your plan includes it.",
+      link: { label: "Edit video with your own agent", href: "/blog/edit-video-with-claude-code-codex-cursor" },
     },
     {
       topic: "editors",
@@ -402,6 +404,7 @@ export const integrationsFaq = {
       topic: "editors",
       q: "What's in Package for editing?",
       a: "A .zip with a folder per editor: the timeline plus every file it uses (footage, voice-over, music, pictures), linked by relative paths so it opens with its media. You can include graphics, titles and captions as 1080p PNG sequences with transparency. Each folder has its own copy of the media, so pick one editor for a smaller file.",
+      link: { label: "Hand off to your editor", href: "/blog/export-timeline-to-final-cut-resolve-premiere-avid" },
     },
     {
       topic: "editors",

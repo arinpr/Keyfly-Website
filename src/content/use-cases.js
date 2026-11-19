@@ -391,7 +391,7 @@ export const useCasesFaq = {
     {
       q: "Can I start from my own footage instead?",
       a: "Yes. Add your clips and KeyFly cuts the silences and filler words, adds captions, and zooms on what matters. You can start from a sentence too, with no template at all.",
-      link: { label: "Your recording, minus the chores", href: "/product#footage" },
+      link: { label: "Edit a talking-head video with AI", href: "/blog/edit-talking-head-video-with-ai" },
     },
     {
       q: "Does using a template use AI minutes?",

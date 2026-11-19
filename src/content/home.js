@@ -664,7 +664,7 @@ export const faq = {
       // words, adds captions, zooms on the focus area and adds callouts.
       q: "Can KeyFly edit footage I shot myself?",
       a: "Yes. Drop in a talking head, a screen recording or your own clips, and KeyFly cuts the silences and filler words, adds captions, and zooms in and adds callouts where they help.",
-      link: { label: "How KeyFly cleans up a recording", href: "/product#footage" },
+      link: { label: "Edit a talking-head video with AI", href: "/blog/edit-talking-head-video-with-ai" },
     },
     {
       // Follows from the app: a sentence starts a video, changes are asked
@@ -680,12 +680,12 @@ export const faq = {
       // effects, "Licensed for you".
       q: "What can KeyFly's AI make?",
       a: "The storyboard, voice-over and motion graphics for every video, plus AI images, music beds and sound effects (licensed for you). Higher plans add generated video and a clone of your own voice.",
-      link: { label: "What KeyFly makes", href: "#makes" },
+      link: { label: "Text to video, step by step", href: "/blog/text-to-video-ai" },
     },
     {
       q: "Can KeyFly keep my videos on brand?",
       a: "Yes. A brand kit holds your logo, colours, font and voice, and KeyFly can fill it from your website. Every new video uses your default kit automatically.",
-      link: { label: "On brand, every time", href: "#brand" },
+      link: { label: "Fill a brand kit from your website", href: "/blog/brand-kit-from-your-website" },
     },
     {
       // The editor's Share button: "Share for review. Anyone with the link

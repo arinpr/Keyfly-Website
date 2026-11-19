@@ -35,14 +35,25 @@ export const footer = {
       ],
     },
     {
+      // Sitewide links to the long guides, so search engines and readers
+      // reach them from every page.
+      title: "Guides",
+      links: [
+        { label: "Text to video with AI", href: "/blog/text-to-video-ai" },
+        { label: "Edit talking-head video", href: "/blog/edit-talking-head-video-with-ai" },
+        { label: "AI video editor for Windows", href: "/blog/ai-video-editor-for-windows" },
+        { label: "KeyFly vs Cardboard", href: "/blog/keyfly-vs-cardboard" },
+        { label: "Cardboard alternatives", href: "/blog/cardboard-alternatives" },
+        { label: "All guides", href: "/blog" },
+      ],
+    },
+    {
       title: "KeyFly",
       links: [
         { label: "Open KeyFly", href: siteConfig.appUrl },
         signIn,
         ...download.platforms.map((p) => ({ label: `KeyFly for ${p.label}`, href: p.href || "/#download" })),
         { label: "Blog", href: "/blog" },
-        { label: "KeyFly vs Cardboard", href: "/blog/keyfly-vs-cardboard" },
-        { label: "Cardboard alternatives", href: "/blog/cardboard-alternatives" },
         { label: "Help", href: "mailto:help@keyfly.si" },
       ],
     },
