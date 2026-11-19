@@ -29,7 +29,7 @@ The durable handoff for anyone (people or coding agents) working on the Keyfly w
   - Syne 700 (`--font-display`) remains the wordmark's face.
   - Interface labels use the system mono stack (`--font-mono-stack`).
 - Icons use the App Router file conventions: `src/app/favicon.ico`, `icon.svg` and `apple-icon.png`, copied unchanged from the brand kit.
-- Hosting: Cloudflare, either as a static export on Pages or through OpenNext on Workers, decided before deploy.
+- Hosting (decided 2026-11-19): a static export served by Cloudflare Workers static assets, deployed by GitHub Actions on push and hourly. See `docs/LAUNCH.md`.
 - Performance targets: LCP ≤ 1.5s, CLS ≤ 0.1, INP ≤ 200ms. Each page has one H1 and complete metadata.
 
 ## Brand

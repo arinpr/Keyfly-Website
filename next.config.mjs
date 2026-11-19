@@ -2,23 +2,11 @@
 const nextConfig = {
   poweredByHeader: false,
 
-  // Basic security headers on every response. None of them blocks anything
-  // the site uses: it isn't framed, uses no camera, microphone or location,
-  // and loads its own fonts, videos and scripts. (A static export ignores
-  // this; there, set the same headers in Cloudflare.)
-  headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-        ],
-      },
-    ];
-  },
+  // A static export (out/), served by Cloudflare Workers static assets (see
+  // wrangler.jsonc). Security headers live in public/_headers, since an export
+  // ignores next.config headers. Pricing is fetched at build; the deploy
+  // workflow rebuilds hourly so prices stay current.
+  output: "export",
 };
 
 export default nextConfig;

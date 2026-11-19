@@ -102,7 +102,10 @@ export async function getPricing() {
     });
     if (!res.ok) throw new Error(`Pricing unavailable (${res.status})`);
     return normalise(await res.json());
-  } catch {
+  } catch (err) {
+    // The deploy workflow sets REQUIRE_PRICING=1: a failed fetch fails the build,
+    // so the live site keeps its last good prices instead of the fallback.
+    if (process.env.REQUIRE_PRICING === "1") throw err;
     try {
       return normalise(await fixture());
     } catch {

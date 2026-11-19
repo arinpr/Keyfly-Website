@@ -50,3 +50,6 @@ scripts/keyfly-footage/footage/*
 
 # graphify knowledge graph (rebuild with: graphify update .)
 graphify-out/
+
+# cloudflare
+.wrangler/

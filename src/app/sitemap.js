@@ -3,6 +3,9 @@ import { categories } from "@/content/use-cases";
 import { legal } from "@/content/legal";
 import { allPosts } from "@/content/blog";
 
+// Built once into the static export.
+export const dynamic = "force-static";
+
 // sitemap.xml, served at /sitemap.xml and named in robots.txt.
 //
 // Built to Google's guidance (developers.google.com/search/docs/crawling-

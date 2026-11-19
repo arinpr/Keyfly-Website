@@ -1,0 +1,17 @@
+// keyfly.si: the static export in out/, served by Cloudflare Workers static
+// assets. Deploy with `pnpm run deploy` (or the GitHub workflow). The keyfly.si
+// zone must be in the account wrangler deploys to; the custom domain below
+// then takes over the apex from whatever serves it today.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "keyfly-website",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./out",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "keyfly.si", "custom_domain": true }],
+  "workers_dev": false,
+  "preview_urls": false
+}

@@ -2,6 +2,9 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
+// Built once into the static export.
+export const dynamic = "force-static";
+
 // The picture shown when a KeyFly link is shared (Open Graph and X). Every
 // page without its own image uses it. The lockup is the brand kit's own file
 // (public/brand/lockup-dark.svg, the wordmark already outlined), placed
