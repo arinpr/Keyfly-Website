@@ -97,6 +97,51 @@ function Block({ block }) {
       </aside>
     );
   }
+  if (block.image) {
+    const { src, alt, caption, w, h } = block.image;
+    return (
+      <figure className={styles.figure}>
+        {/* Static export: plain img, sized to avoid layout shift. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={alt} width={w} height={h} loading="lazy" decoding="async" />
+        {caption ? (
+          <figcaption>
+            <Text text={caption} />
+          </figcaption>
+        ) : null}
+      </figure>
+    );
+  }
+  if (block.gallery) {
+    return (
+      <figure className={styles.gallery}>
+        <ul>
+          {block.gallery.items.map((item) => (
+            <li key={item.src}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={item.src} alt={item.alt} width={item.w} height={item.h} loading="lazy" decoding="async" />
+              {item.label ? <span>{item.label}</span> : null}
+            </li>
+          ))}
+        </ul>
+        {block.gallery.caption ? (
+          <figcaption>
+            <Text text={block.gallery.caption} />
+          </figcaption>
+        ) : null}
+      </figure>
+    );
+  }
+  if (block.qa) {
+    return (
+      <div className={styles.qa}>
+        <h3>{block.qa.q}</h3>
+        <p>
+          <Text text={block.qa.a} />
+        </p>
+      </div>
+    );
+  }
   if (block.quote) {
     return (
       <blockquote className={styles.quote}>

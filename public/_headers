@@ -14,3 +14,7 @@
 /opengraph-image
   Content-Type: image/png
   Cache-Control: public, max-age=86400
+
+/*/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400

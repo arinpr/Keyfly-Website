@@ -156,6 +156,7 @@
 }
 
 .timeline {
+  min-width: 0;
   position: sticky;
   top: calc(var(--header-h) + 32px);
   align-self: start;
@@ -193,8 +194,11 @@
 
 .trackWrap {
   --p: 0;
+  min-width: 0;
   position: relative;
-  height: min(52svh, 440px);
+  /* Long guides get room for every section (34px each) instead of overlapping. */
+  --track-h: max(min(52svh, 440px), calc(var(--count, 1) * 34px));
+  height: var(--track-h);
   padding-left: 14px;
 }
 
@@ -230,6 +234,7 @@
 
 .track li {
   display: flex;
+  min-width: 0;
   min-height: 30px;
   flex-basis: 0;
 }
@@ -237,6 +242,7 @@
 .clip {
   display: flex;
   flex: 1;
+  min-width: 0;
   align-items: flex-start;
   gap: 10px;
   padding: 7px 10px;
@@ -251,6 +257,13 @@
     background 0.3s ease,
     color 0.3s ease,
     box-shadow 0.3s ease;
+}
+
+.clipName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .clipNum {
@@ -291,7 +304,7 @@
   border-radius: 2px;
   background: var(--soft-mint);
   box-shadow: 0 0 10px var(--soft-mint);
-  translate: 0 calc(var(--p) * min(52svh, 440px) - 1px);
+  translate: 0 calc(var(--p) * var(--track-h) - 1px);
   pointer-events: none;
 }
 
@@ -528,6 +541,68 @@
   font-size: 1.5rem;
   font-style: italic;
   line-height: 1.35;
+}
+
+.figure,
+.gallery {
+  margin: 8px 0;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 0 0 1px rgb(244 241 234 / 0.1);
+}
+
+.figure figcaption,
+.gallery figcaption {
+  margin-top: 10px;
+  color: rgb(244 241 234 / 0.55);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.gallery ul {
+  display: flex;
+  gap: 12px;
+  padding: 0;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: thin;
+}
+
+.gallery li {
+  display: grid;
+  flex: none;
+  gap: 6px;
+}
+
+.gallery img {
+  display: block;
+  width: auto;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgb(244 241 234 / 0.1);
+}
+
+.gallery li span {
+  color: rgb(244 241 234 / 0.6);
+  font-family: var(--font-mono-stack);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+}
+
+.qa h3 {
+  color: var(--paper);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.qa p {
+  margin-top: 6px;
 }
 
 /* ---- The bar on narrow screens ---- */

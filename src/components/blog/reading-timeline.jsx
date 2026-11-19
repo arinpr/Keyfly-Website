@@ -99,7 +99,7 @@ export function ReadingTimeline({ sections, minutes, bodyId, label }) {
           <span>{label}</span>
           {readout(0)}
         </p>
-        <div className={styles.trackWrap} ref={trackRef}>
+        <div className={styles.trackWrap} ref={trackRef} style={{ "--count": sections.length }}>
           <ol className={styles.track}>
           {sections.map((s, i) => (
             <li key={s.id} style={{ flexGrow: shares ? shares[i] : 1 }}>
@@ -110,7 +110,9 @@ export function ReadingTimeline({ sections, minutes, bodyId, label }) {
                 aria-current={i === active ? "location" : undefined}
               >
                 <span className={styles.clipNum}>{String(i + 1).padStart(2, "0")}</span>
-                <span className={styles.clipName}>{s.title}</span>
+                <span className={styles.clipName} title={s.title}>
+                  {s.title}
+                </span>
               </a>
             </li>
           ))}

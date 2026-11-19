@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { plainText } from "@/components/inline-text";
 
 // Structured data (JSON-LD, schema.org) for the homepage: who makes KeyFly,
 // the site, the app itself with its plans as offers, and the FAQ. It only
@@ -313,7 +314,11 @@ export function postJsonLd(post) {
         url,
         headline: post.title,
         description: post.dek,
-        image: `${siteConfig.url}${post.cover.poster}`,
+        image: [
+          `${siteConfig.url}${post.path}/opengraph-image`,
+          `${siteConfig.url}${post.cover.poster}`,
+          ...post.sections.flatMap((s) => s.blocks.filter((b) => b.image).map((b) => `${siteConfig.url}${b.image.src}`)),
+        ],
         datePublished: post.date.iso,
         dateModified: post.updated?.iso ?? post.date.iso,
         articleSection: post.topicLabel,
@@ -323,6 +328,7 @@ export function postJsonLd(post) {
         publisher: org,
         isPartOf: { "@id": `${siteConfig.url}/blog#blog` },
       },
+      ...(post.faq?.length ? [faqPage(post.faq.map(({ q, a }) => ({ q, a: plainText(a) })))] : []),
       {
         "@type": "BreadcrumbList",
         itemListElement: [

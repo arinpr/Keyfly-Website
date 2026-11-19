@@ -28,9 +28,9 @@ export async function generateMetadata({ params }) {
       url: post.path,
       publishedTime: post.date.iso,
       section: post.topicLabel,
-      images: [{ url: post.cover.poster, alt: post.cover.alt }],
+      // The image comes from ./opengraph-image.jsx (a PNG with the title).
     },
-    twitter: { card: "summary_large_image", title: post.title, description: post.dek, images: [post.cover.poster] },
+    twitter: { card: "summary_large_image", title: post.title, description: post.dek },
     robots: publicRobots,
   };
 }

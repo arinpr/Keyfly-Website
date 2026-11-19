@@ -5,18 +5,15 @@ Last updated: 2026-11-19
 ## How the site is hosted
 
 - `next build` writes a static export to `out/` (`output: "export"` in `next.config.mjs`).
-- Cloudflare Workers static assets serve it (`wrangler.jsonc`): clean URLs, `404.html` for misses, and the headers in `public/_headers` (an export ignores `next.config` headers).
-- `.github/workflows/deploy.yml` builds and deploys on every push to `main`, every hour (so prices from `api.keyfly.si/v1/public/pricing` stay current), and by hand.
-- The deploy build sets `REQUIRE_PRICING=1`: if the pricing API is down, the build fails and the live site keeps its last good deploy instead of shipping the pricing fallback.
+- The `keyfly-site` Worker in the Cevrynt Cloudflare account (`wrangler.jsonc`) serves it on the `keyfly.si/*` and `www.keyfly.si/*` routes; `worker/index.js` 301s www to the apex and hands everything else to the static assets. Headers are in `public/_headers` (an export ignores `next.config` headers).
+- `.github/workflows/deploy.yml` builds on every push to `main`, hourly (so prices from `api.keyfly.si/v1/public/pricing` stay current) and by hand. It deploys only when the repository secret `CLOUDFLARE_API_TOKEN` exists (a scoped token: Workers Scripts Edit, Workers Routes Edit, Zone Read on keyfly.si). Never store the Global API Key there.
+- The deploy build sets `REQUIRE_PRICING=1`: if the pricing API is down, the build fails and the live site keeps its last good deploy.
 - Local check of the exact production output: `pnpm build && pnpm exec wrangler dev` (port 8787).
 
-## Go-live steps (owner)
+## After go-live (owner)
 
-1. **Cloudflare access.** The `keyfly.si` zone is not in the account the dev machine's wrangler login sees. In the account that holds the zone, create an API token with *Workers Scripts: Edit*, *Workers Routes: Edit* and *Zone: Read* on keyfly.si.
-2. **GitHub secrets** on this repo: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
-3. **Take over the apex.** `keyfly.si` serves a one-page placeholder today. Remove whatever serves it (Pages project, Worker route or DNS record), then run the workflow by hand. The `custom_domain` route in `wrangler.jsonc` creates the DNS record and certificate. `www.keyfly.si` already 301s to the apex; keep that rule.
-4. **Search engines,** once live: verify the domain in Google Search Console and Bing Webmaster Tools (DNS TXT record, so nothing goes in the code), submit `https://keyfly.si/sitemap.xml`, and request indexing for `/`, `/product`, `/use-cases`, `/integrations`, `/pricing`.
-5. **Smoke test:** `/`, `/pricing` (real prices), `/terms`, `/privacy`, `/blog/keyfly-vs-cardboard`, `/llms.txt`, `/robots.txt`, `/sitemap.xml`, a missing page (404), and a share preview of the homepage (opengraph.xyz or similar).
+1. Verify keyfly.si in Google Search Console and Bing Webmaster Tools (google-site-verification TXT records already exist), submit `https://keyfly.si/sitemap.xml`, and request indexing for the pages and the five long guides.
+2. Add the scoped `CLOUDFLARE_API_TOKEN` secret so pushes and hourly price refreshes deploy themselves.
 
 ## Legal pages (published 2026-11-19)
 
@@ -43,6 +40,10 @@ Technical gaps still open, in order of value:
 1. **One share image for every page** except blog posts. Give Product, Use cases, Integrations and Pricing their own `opengraph-image.jsx` (same layout, page title as the line) for better click-through when shared at launch.
 2. **No `sameAs` on the Organization.** Add the official X, LinkedIn, YouTube and GitHub profiles to `homeJsonLd` once they exist; it ties the brand together for Google's knowledge panel and for AI answers.
 3. **Blog posts are authored by the company,** not a named person. A real author with a short bio page is a strong E-E-A-T and AI-citation signal.
+
+## Long-form guides (published 2026-11-19)
+
+Five guides of 4,300–4,750 words, each with images, an FAQ (FAQPage schema), its own share image and internal links: `/blog/keyfly-vs-cardboard`, `/blog/cardboard-alternatives`, `/blog/ai-video-editor-for-windows`, `/blog/edit-talking-head-video-with-ai`, `/blog/text-to-video-ai` (files in `src/content/posts/`). Competitor facts are dated 19 Nov 2026 with sources in each file's header; re-check them monthly.
 
 ## Content gaps for organic growth
 
