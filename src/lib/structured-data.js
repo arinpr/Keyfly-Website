@@ -62,6 +62,14 @@ export function homeJsonLd({ description, faq, pricing }) {
         url: siteConfig.url,
         logo: `${siteConfig.url}/brand/lockup-light.svg`,
         email: "help@keyfly.si",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: siteConfig.address.streetAddress,
+          addressLocality: siteConfig.address.addressLocality,
+          addressRegion: siteConfig.address.addressRegion,
+          postalCode: siteConfig.address.postalCode,
+          addressCountry: siteConfig.address.addressCountry,
+        },
         brand: { "@type": "Brand", name: siteConfig.name },
       },
       {

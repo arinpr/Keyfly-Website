@@ -5,7 +5,7 @@ Last updated: 2026-10-31
 ## What we know from the brand kit
 
 - **Product:** Keyfly is a desktop app for macOS, Windows and Linux (the kit has icons and installer art for all three). The symbol, "Flight path", stands for "the camera's flight, and the moment a shot lands", so the product is about video.
-- **Owner:** "Keyfly.si is a Cevrynt Inc. product" (from the DMG installer art). The domain looks like `keyfly.si`.
+- **Owner:** KeyFly, 8 The Green, STE R, Dover, Delaware 19901, US. The domain looks like `keyfly.si`.
 - **Brand assets:** the symbol, wordmark and lockups (light and dark versions), favicons, app icons and Syne 700 (OFL licence).
 - **Colours (updated kit, 2026-10-29):** Soft mint `#5FE0B0`, Deep mint `#12805B`, Mint text `#0E6B4C`, Mint text on dark `#82E8C2`, Mint ink `#06231A`, Night `#0B0B0D`, Night top `#202026`, Paper `#F4F1EA`, Ink `#141416`. White text on deep mint, Mint ink on soft mint.
 - **Brand motion:** the line draws itself in 0.9s, then the point lands with a 0.35s settle. Reduced motion falls back to a simple fade.
@@ -15,12 +15,12 @@ Last updated: 2026-10-31
 
 | Choice | Why |
 |---|---|
-| **Next.js 16 (App Router), JavaScript/JSX** | It's the same stack as the Cevrynt site, so the team already knows it. It renders on the server for SEO and builds pages statically for speed. |
-| **pnpm** | Same package manager as Cevrynt. |
-| **Plain CSS with CSS Modules and design tokens as CSS variables** | No Tailwind. Each component loads only its own CSS, which avoids Cevrynt's 860 KB global stylesheet. |
+| **Next.js 16 (App Router), JavaScript/JSX** | It's the same stack as the team's other site, so the team already knows it. It renders on the server for SEO and builds pages statically for speed. |
+| **pnpm** | Same package manager as the team's other site. |
+| **Plain CSS with CSS Modules and design tokens as CSS variables** | No Tailwind. Each component loads only its own CSS, which avoids an 860 KB global stylesheet. |
 | **Motion only where it earns it** | CSS for simple transitions; GSAP only for the flight-path line drawing. |
 | **Self-hosted fonts** | Syne 700 from the kit for headings, plus one neutral text face for body copy (proposal: Inter, which matches the installer art). Nothing loads from Google at runtime. |
-| **Cloudflare (Workers via OpenNext, or static export)** | Same host as Cevrynt. If the site stays fully static we use a static export on Cloudflare Pages, which is simpler. |
+| **Cloudflare (Workers via OpenNext, or static export)** | Same host as the team's other site. If the site stays fully static we use a static export on Cloudflare Pages, which is simpler. |
 
 Performance targets: LCP ≤ 1.5s, CLS ≤ 0.1, INP ≤ 200ms. Each page has one H1, real metadata, a sitemap and Open Graph images.
 

@@ -14,6 +14,7 @@ import { siteConfig } from "@/config/site";
 
 const name = siteConfig.name;
 const company = siteConfig.company;
+const address = siteConfig.address.text;
 const help = "[help@keyfly.si](mailto:help@keyfly.si)";
 
 export const legal = {
@@ -51,7 +52,7 @@ export const legal = {
         title: "Who we are and these terms",
         plain: `By using ${name}, you agree to these terms. If you use it for a company, the company agrees too.`,
         blocks: [
-          `${name} is made by ${company} ("we", "us"). These terms cover every part of ${name} we offer, together called the **Services**.`,
+          `${company} ("we", "us") makes ${name}. Our address is ${address}. These terms cover every part of ${name} we offer, together called the **Services**.`,
           "By creating an account or using the Services, you accept these terms and our [Privacy Policy](/privacy). If you use the Services for an organisation, you confirm you're allowed to accept these terms for it, and \"you\" means the organisation too.",
           "Enterprise customers may sign an order form or agreement with us. Where it differs from these terms, it takes priority.",
         ],
@@ -255,7 +256,7 @@ export const legal = {
         plain: "Talk to us first. If we can't settle it, the courts named here decide.",
         blocks: [
           `If you have a problem, write to ${help} first; most things can be solved quickly. If we can't settle it within 30 days, either of us may take it further as below.`,
-          "These terms are governed by the laws of the place where Cevrynt Inc. is incorporated, and disputes go to the courts there.",
+          "These terms are governed by the laws of the State of Delaware, United States, and disputes go to the state or federal courts in Delaware.",
           "If you're a consumer in the EU or UK, you also keep the protection of your country's mandatory consumer laws and can bring a claim in your local courts.",
         ],
       },
@@ -291,7 +292,7 @@ export const legal = {
       href: "mailto:help@keyfly.si",
     },
     related: [{ kicker: "Also read", label: "Privacy Policy", href: "/privacy" }],
-    company: `KeyFly.si is a ${company} product.`,
+    company: `© ${company} · ${address}`,
   },
 
   privacy: {
@@ -321,9 +322,9 @@ export const legal = {
       {
         id: "who-we-are",
         title: "Who we are",
-        plain: `${company} makes ${name} and is responsible for your data.`,
+        plain: `${company} is responsible for your data.`,
         blocks: [
-          `${company} is the controller of the personal data described here. You can reach us about privacy at ${help}.`,
+          `${company}, ${address}, is the controller of the personal data described here. You can reach us about privacy at ${help}.`,
           "If your organisation uses KeyFly on an Enterprise plan under a data processing agreement (DPA), we process its team's content on its behalf, and its own privacy notice applies too.",
         ],
       },
@@ -531,6 +532,6 @@ export const legal = {
       href: "mailto:help@keyfly.si",
     },
     related: [{ kicker: "Also read", label: "Terms of Service", href: "/terms" }],
-    company: `KeyFly.si is a ${company} product.`,
+    company: `© ${company} · ${address}`,
   },
 };

@@ -164,7 +164,7 @@ export const prompt = {
       have: "Already have an account?",
       signIn: "Sign in",
       legal: ["By continuing you agree to the ", "Terms of Service", " and ", "Privacy Policy", "."],
-      company: "KeyFly.si is a Cevrynt Inc. product",
+      company: "© KeyFly · keyfly.si",
     },
   },
   // "or make it in …". These open the section that explains it until the
@@ -596,7 +596,7 @@ export const download = {
   soon: "Coming soon",
   browser: { label: "Open in your browser", href: siteConfig.appUrl },
   phone: "On a phone? KeyFly runs in the browser.",
-  note: "KeyFly.si is a Cevrynt Inc. product",
+  note: "© KeyFly · keyfly.si",
   // Links and requirements from app.keyfly.si/download (2026-11-03). The
   // links always serve the latest build. The app isn't notarised yet, so the
   // first open asks once (as that page says).

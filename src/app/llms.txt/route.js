@@ -27,7 +27,7 @@ export function GET() {
     "",
     `> ${plain(siteConfig.description)}`,
     "",
-    `${siteConfig.name} is made by ${siteConfig.company} Web app: ${siteConfig.appUrl}. Support: help@keyfly.si.`,
+    `${siteConfig.name}, ${siteConfig.address.text}. Web app: ${siteConfig.appUrl}. Support: help@keyfly.si.`,
     "",
     "## Pages",
     "",

@@ -1,6 +1,6 @@
 # KeyFly website
 
-The marketing site for KeyFly, the AI video editor by Cevrynt Inc., served at keyfly.si. The app itself lives at app.keyfly.si and is a separate project.
+The marketing site for KeyFly, the AI video editor, served at keyfly.si. The app itself lives at app.keyfly.si and is a separate project.
 
 For the full history of every page, section and design decision, read [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md). [`PLAN.md`](PLAN.md) has the original build order, and [`AGENTS.md`](AGENTS.md) the rules for anyone (or any agent) changing the code.
 
